@@ -1,0 +1,19 @@
+Bước 1: Tạo database "employee_directory" với bảng "employee" (id, firstName, lastName).
+
+Bước 2: Tạo project với các Dependency: Spring Boot DevTools, Spring Security, Spring Boot Maven, MySQL, Spring JPA.
+
+Bước 3: Cấu hình database và JPA trong file application.properties.
+
+Bước 4: Trong package "cam.example.testapi", tạo các file: config, dao, entity, rest, service.
+
+Bước 5: Trong package "config", tạo 2 lớp: DataSourceConfig (kết nối đến database = dataSource) và DemoSecurityConfig (sử dụng jdbc authentication và HttpSecurity) để tạo hàm configure.
+
+Bước 6: Trong package "entity", tạo lớp "Customer" với các thực thể tương ứng.
+
+Bước 7: Trong package "dao", tạo lớp "CustomerRepository" extend JpaRepository truyền vào Entity và Integer, khởi tạo các phương thức cần thiết: findAllOrderByLastNameAsc và findByFirstNameContainsOrLastNameContainsAllIgnoreCase.
+
+Bước 8: Trong package "service", tạo interface "CustomerService" với các phương thức: findAll, findById, save, deleteById, searchBy; tiếp tục tạo lớp "CustomerServiceImpl" implement của interface "CustomerService" với các phương thức tương ứng.
+
+Bước 9: Trong package "rest", tạo file "CustomerRestController" (truyền vào repository) sử dụng các phương thức @RestController, @RequestMapping, @GetMapping, @PostMapping, @DeleteMapping, @PutMapping để tạo các URL và chức năng tương ứng.
+
+Bước 10: Tạo 2 lớp thông báo lỗi "CustomerNotFoundAdvice" và "CustomerNotFoundException".
